@@ -1,0 +1,66 @@
+ 
+ Language :-
+   Typed Programming [C,c++,Java]
+     20-----> int x;
+     20.5----> Float/Double
+     Hello ---> String x;
+   
+   Dynamically Typed [Javascript]
+     var x;
+----------------------------------------------------
+  1. Function Oriented {C}
+  2. Object Oriented {Java}
+  3. Multiparadigm {Javascript, Python....}    
+ 
+ Javascript :-
+   [Why,What,How] :-
+  Web-application:-
+    1. Multipage Web Application
+    2. Single Page Web Application [ReactJs, Angular, Vue] 
+  
+  1. Javascript is client side as well as server side scripting language.
+  2. Javascript is dynamically typed scripting language   
+  3. Javascript is function oriented, object oriented multi-paradigm scripting language.
+  4. Javascript is Simple.
+  5. JS has capability to convert HTML into DHTML
+  6. JS is single threaded.
+  
+  ------------------------------------------------------------------------------------------
+  Executing Javascript Client Side[Browser]
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
