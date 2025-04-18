@@ -1,0 +1,45 @@
+<script>
+    /*
+      undefined v/s null
+
+      ==, ===
+    */
+    var a = "20";
+    var b = 5;
+
+    document.write('<br>"20" + 5 : '+(a+b));
+    document.write('<br>"20" - 5 : '+(a-b)); // 15
+    document.write('<br>"20" * 5 : '+(a*b)); // 100
+    document.write('<br>"20" / 5 : '+(a/b)); // 4
+    document.write("<br>21 % 5 : "+(21%5)); // 1
+    document.write("<br>-21 % 5 : "+(-21%5)); // -1
+    document.write("<br>21 % -5 : "+(21%-5)); // 1
+    document.write("<br>-21 % -5 : "+(-21%-5));
+    document.write("<br> 5%21 : "+(5%21)); // 5
+    document.write("<br>21.5 % 5 : "+(21.5%5)); // 1.5
+    document.write("<br>21 / 0 : "+(21 / 0));
+    document.write("<br>-21 / 0 : "+(-21/0)); // -infinity
+    document.write("<br> 21%0 : "+(21%0));
+    document.write("<br> 0/0 : "+(0/0));
+    document.write("<br>0/20 : "+(0/20));
+    document.write("<br> '20' + null : "+('20'+null)); // 20null
+    document.write("<br> '20'+undefined : "+('20'+undefined)); // 20undefined
+    document.write("<br> 20 + null : "+(20+null)); // 20
+    document.write("<br> 20 + undefined : "+(20+undefined)); // NaN
+    document.write("<br> 20 + NaN : "+(20+NaN));
+    document.write("<br> 20*null : "+(20*null));// 0
+    document.write("<br> 20 + true : "+(20+true)); // 21
+    document.write("<br> undefined == null : "+(undefined == null)); // true
+    document.write("<br> undefined === null : "+(undefined === null)); // false
+    document.write("<br> undefined === undefined : "+(undefined === undefined));
+    document.write("<br> 1 == true : "+(1 == true));
+    document.write("<br> NaN == NaN : "+(NaN == NaN));
+    document.write("<br>NaN != NaN : "+(NaN != NaN));
+    document.write("<br> 10 == 10n : "+(10 == 10n));
+    document.write("<br> 10 === 10n : "+(10 === 10n)); // false
+</script>
+
+
+
+
+
