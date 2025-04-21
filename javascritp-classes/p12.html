@@ -1,0 +1,20 @@
+<script>
+    /*
+      Java switch expression :-  byte,short,int,char,String
+    */
+    //let x = 20;
+    //let x = "hello";
+    //let x = false;
+    let x=0.5;
+    switch(x){
+      case 20: document.write("20 Matched...");break;
+      case "hello":document.write("hello matched...");break;
+      case false:document.write("false matched...");break;
+      case 20n:document.write("20n matched...");break;
+      case null: document.write("null matched...");break;
+      case NaN:document.write("NaN Matched....");break;
+      case undefined:document.write("undefined matched..");break;
+      case 0.5:document.write("0.5 Matched...");break;
+      default: document.write("Not Matched...");
+    }
+</script>
