@@ -1,0 +1,14 @@
+<script>
+    let x = [1,2,3,4,6,3];
+    let result = x.map((ele)=>{return ele*ele});
+    document.write("<br>"+result);
+
+    result = x.filter((ele)=>{return ele%2==1});
+    document.write("<br>"+result);
+
+    let index = x.findIndex((ele)=>{return ele == 3});
+    document.write("<br>index of 3 : "+index);
+
+    let status = x.some((ele)=>{return ele == 5});
+    document.write("<br>5 ka status : "+status);
+</script>
