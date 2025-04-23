@@ -1,0 +1,17 @@
+<script>
+    /*
+        Spread Operator
+        Shallow v/s Deep copy
+        Object notation
+    */
+    let obj1 = {a:20,b:10};
+ 
+    let obj2 = {...obj1,c:30,d:40};
+    
+    obj1.c = 100;
+    delete obj1.b;
+    
+    console.log(obj1);
+    console.log(obj2);
+    document.write(obj2.a+"  "+obj2.b+" "+obj2.c+"  "+obj2.d);
+</script>
