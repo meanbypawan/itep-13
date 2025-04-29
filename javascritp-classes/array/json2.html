@@ -4,6 +4,11 @@
     
     // Json String
     let customerInfo = '{"name":"abc","age":24,"contact":9009111222}';
+    // String to Object
     let obj = JSON.parse(customerInfo);
+    /*
+      Object to String
+      let jsonString = JSON.stringify(json_object);
+    */
     document.write(obj.name+"  "+obj.age+" "+obj.contact);
 </script>

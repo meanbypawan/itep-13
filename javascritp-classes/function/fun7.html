@@ -1,0 +1,13 @@
+<script>
+    // Callback Function
+    function f1(a,b){
+      // a : 20
+      // b : function(){}
+      console.log("F1 executed.. a : "+a);
+      b();
+    }
+
+    f1(20,function(){
+        console.log("Callback executed...");
+    });
+</script>
