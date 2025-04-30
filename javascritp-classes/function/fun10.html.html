@@ -1,0 +1,14 @@
+<script>
+    function Addition(a,b){
+        this.a = a;
+        this.b = b;
+        this.add = ()=>{
+            console.log("Addition : "+(this.a + this.b));
+        }
+    }
+
+    let obj = new Addition(2,3);
+    //obj.add();
+    console.log(obj);
+    console.log(obj.constructor.name);
+</script>

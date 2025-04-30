@@ -1,0 +1,24 @@
+<script>
+   function DataEncapsulation(){ 
+    this.x = 100;
+    this.f1 = ()=>{
+        console.log("Inside F1  "+this.x);
+    }
+    this.f2 = ()=>{
+        console.log("Inside F2 : "+this.x);
+    }
+    this.f3 = ()=>{
+        console.log("Inside F3 : "+this.x);
+        privateMethod();
+    }
+    const privateMethod = ()=>{
+        console.log("Hello...");
+    } 
+   } 
+   let obj = new DataEncapsulation();
+   obj.f1();
+   obj.f2();
+   obj.f3();
+   //privateMethod();
+
+</script>
