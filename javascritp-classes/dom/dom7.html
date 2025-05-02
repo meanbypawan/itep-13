@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <style>
+            .main{
+                height: 100vh;
+                border: 1px solid black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                padding-left: 100px;
+                padding-right: 100px;
+            }
+            .dark-mode{
+                background-color: black;
+                color: white;
+            }
+            .light-mode{
+                background-color: white;
+                color: black;
+            }
+
+        </style>
+    </head>
+    <body>
+        <button onclick="changeTheme('dark-mode','light-mode')">Dark mode</button>
+        <button onclick="changeTheme('light-mode','dark-mode')">Light mode</button>
+        <br/><br/>
+        <div id="main" class="main dark-mode">
+            <h1>InfoBeans Foundation</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi nesciunt non, atque ea odio quam vero voluptate similique voluptates harum. Aperiam soluta sapiente animi voluptatem, cupiditate, necessitatibus omnis, quibusdam laboriosam quidem beatae deleniti unde perspiciatis. Perferendis, tenetur eaque deleniti doloribus autem voluptate, laudantium consequatur commodi quas molestias aperiam. Ducimus, qui?</p>
+        </div>
+        <script>
+            function changeTheme(a,r){
+                let div = document.getElementById("main");
+                div.classList.remove(r);
+                div.classList.add(a); 
+            }
+        </script>
+    </body>
+</html>

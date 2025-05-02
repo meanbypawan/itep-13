@@ -1,0 +1,24 @@
+<html>
+    <body>
+        <center>
+            <img id="main" src="./images/tablesetting.jpg" width="300" height="300"/>
+            <br/><br/><br/>
+            <button onclick="changeImage(1)">+</button>
+            <button onclick="changeImage(0)">-</button>
+        </center>
+        <script>
+            function changeImage(n){
+                let img = document.getElementById("main");
+                if(n){
+                  img.width = img.width*1 + 50;
+                  img.height = img.height*1 + 50;
+                }
+                else{
+                    img.width = img.width*1 - 50;
+                    img.height = img.height*1 - 50;
+                  
+                }
+            }
+        </script>
+    </body>
+</html>

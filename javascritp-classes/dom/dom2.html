@@ -1,0 +1,30 @@
+<html>
+    <body>
+        <center>
+            <img id="main" src="./images/tablesetting.jpg" width="300" height="300"/>
+            <br/><br/><br/>
+            <button onclick="incrementSize()">+</button>
+            <button onclick="decrementSize()">-</button>
+        </center>
+        <script>
+            /*
+              let width = "500";
+              // width = width + 1; // 5001
+              width = width*1 + 1;
+              coercion
+            */
+            function incrementSize(){
+               let img = document.getElementById("main");
+               console.log(img.constructor.name);
+               img.width = img.width*1 + 50;
+               img.height = img.height*1 + 50;
+            }
+            function decrementSize(){
+               let img = document.getElementById("main");
+               console.log(img.constructor.name);
+               img.width = img.width*1 - 50;
+               img.height = img.height*1 - 50;
+            }
+        </script>
+    </body>
+</html>

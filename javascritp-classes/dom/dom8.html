@@ -1,0 +1,155 @@
+<html>
+    <body>
+        <button onclick="changeTheme('red','blue')">Red-Blue</button>
+        <button onclick="changeTheme('mediumseagreen','orange')">Green-orange</button>
+        <button onclick="changeTheme('yellow','pink')">Yello-pink</button>
+        <br/><br/>
+        <table id="data-table" border="1" width="100%">
+            <tr>
+                <td>S.no</td>
+                <td>Name</td>
+                <td>Contact</td>
+                <td>Age</td>
+                <td>Address</td>
+            </tr>
+            <tr>
+                <td>1000</td>
+                <td>Lili</td>
+                <td>90091111222</td>
+                <td>21</td>
+                <td>Indore, MP</td>
+            </tr>
+            <tr>
+                <td>1000</td>
+                <td>Lili</td>
+                <td>90091111222</td>
+                <td>21</td>
+                <td>Indore, MP</td>
+            </tr>
+            <tr>
+                <td>1000</td>
+                <td>Lili</td>
+                <td>90091111222</td>
+                <td>21</td>
+                <td>Indore, MP</td>
+            </tr>
+            <tr>
+                <td>1000</td>
+                <td>Lili</td>
+                <td>90091111222</td>
+                <td>21</td>
+                <td>Indore, MP</td>
+            </tr>
+            <tr>
+                <td>1000</td>
+                <td>Lili</td>
+                <td>90091111222</td>
+                <td>21</td>
+                <td>Indore, MP</td>
+            </tr>
+            <tr>
+                <td>1000</td>
+                <td>Lili</td>
+                <td>90091111222</td>
+                <td>21</td>
+                <td>Indore, MP</td>
+            </tr>
+            <tr>
+                <td>1000</td>
+                <td>Lili</td>
+                <td>90091111222</td>
+                <td>21</td>
+                <td>Indore, MP</td>
+            </tr>
+            <tr>
+                <td>1000</td>
+                <td>Lili</td>
+                <td>90091111222</td>
+                <td>21</td>
+                <td>Indore, MP</td>
+            </tr>
+            <tr>
+                <td>1000</td>
+                <td>Lili</td>
+                <td>90091111222</td>
+                <td>21</td>
+                <td>Indore, MP</td>
+            </tr>
+            <tr>
+                <td>1000</td>
+                <td>Lili</td>
+                <td>90091111222</td>
+                <td>21</td>
+                <td>Indore, MP</td>
+            </tr>
+            <tr>
+                <td>1000</td>
+                <td>Lili</td>
+                <td>90091111222</td>
+                <td>21</td>
+                <td>Indore, MP</td>
+            </tr>
+            <tr>
+                <td>1000</td>
+                <td>Lili</td>
+                <td>90091111222</td>
+                <td>21</td>
+                <td>Indore, MP</td>
+            </tr>
+            <tr>
+                <td>1000</td>
+                <td>Lili</td>
+                <td>90091111222</td>
+                <td>21</td>
+                <td>Indore, MP</td>
+            </tr>
+            <tr>
+                <td>1000</td>
+                <td>Lili</td>
+                <td>90091111222</td>
+                <td>21</td>
+                <td>Indore, MP</td>
+            </tr>
+            <tr>
+                <td>1000</td>
+                <td>Lili</td>
+                <td>90091111222</td>
+                <td>21</td>
+                <td>Indore, MP</td>
+            </tr>
+            <tr>
+                <td>1000</td>
+                <td>Lili</td>
+                <td>90091111222</td>
+                <td>21</td>
+                <td>Indore, MP</td>
+            </tr>
+            <tr>
+                <td>1000</td>
+                <td>Lili</td>
+                <td>90091111222</td>
+                <td>21</td>
+                <td>Indore, MP</td>
+            </tr>
+        </table>
+        <script>
+            function changeTheme(evenRowColor,oddRowColor){
+               let table = document.getElementById("data-table");
+               let rowArray = table.rows;
+               for(let index=0; index<rowArray.length; index++){
+                  if(index%2)
+                   rowArray[index].style.backgroundColor = oddRowColor;
+                  else
+                   rowArray[index].style.backgroundColor = evenRowColor; 
+                //  for(let colIndex=0;colIndex < rowArray[index].cells.length; colIndex++){
+                //     if(colIndex%2)
+                //      rowArray[index].cells[colIndex].style.backgroundColor = evenRowColor;
+                //     else
+                //      rowArray[index].cells[colIndex].style.backgroundColor = oddRowColor;
+                //  }
+
+               } 
+            }
+        </script>
+    </body>
+</html>
