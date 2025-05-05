@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Form Validation</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        small{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+   <div class="container mt-3">
+    <form>
+        <div class="form-group">
+            <input onkeyup="validateUsername()" id="username" type="text" class="form-control" placeholder="Enter username"/>
+            <small id="usernameError"></small>
+        </div>
+        <div class="input-group mb-3">
+            <input onkeyup="validatePassword()" id="password" type="password" class="form-control" placeholder="Enter your password">
+            <div class="input-group-append">
+              <span onclick="togglePassword(this)" class="input-group-text btn">Show</span>
+            </div>
+        </div>
+        <small id="passwordError"></small>
+        <div class="form-group">
+            <input onkeyup="validateMobile()" type="text" id="mobile" class="form-control" placeholder="Enter mobilenumber"/>
+            <small id="mobileError"></small>
+        </div>
+        <div class="form-group">
+            <select onchange="validateQualification()" class="form-control" id="qualification">
+                <option value="0">Select qualification</option>
+                <option value="DR">Doctorate</option>
+                <option value="PG">Post graduate</option>
+                <option value="GR">Graduate</option>
+                <option value="UG">Undergraduate</option>
+            </select>
+            <small id="qualificationError"></small>
+        </div>
+        <div class="form-group">
+            <input onchange="validateProfile()" type="file" id="profile" placeholder="upload pic" class="form-control"/>
+            <small id="profileError"></small>
+        </div>
+        <div class="form-group mt-3">
+            <button onclick="return validateForm()" class="btn btn-success" type="submit">Submit</button>
+        </div>
+    </form>
+    <script>
+        function validateProfile(){
+            let status = true;
+            let profile = document.getElementById("profile");
+            let profileError = document.getElementById("profileError");
+            if(profile.files[0]){
+               let fileName = profile.files[0].name;
+               let lastDotIndex = fileName.lastIndexOf(".");
+               let fileExtension = fileName.substring(lastDotIndex);
+               if(fileExtension != ".png"){
+                 profileError.innerText = "only png is allowed";
+                 status = false;
+               }
+               else
+                 profileError.innerText = "";
+            }
+            else{
+                status = false;
+                profileError.innerText = "upload profile picture";
+            }
+            return status;
+        }
+        function validateQualification(){
+            let status = true;
+            let qualification = document.getElementById("qualification").value;
+            let qualificationError = document.getElementById("qualificationError");
+            if(qualification == "0"){
+                status = false;
+                qualificationError.innerText = "select qualification";
+            }
+            else
+             qualificationError.innerText = "";
+            return status;
+        }
+        function validateMobile(){
+            let status = true;
+            let mobile = document.getElementById("mobile").value;
+            let mobileError = document.getElementById("mobileError");
+            if(mobile.length == 0){
+                status = false;
+                mobileError.innerText = "mobile number is required";
+            }
+            else if(isNaN(mobile)){
+                status = false;
+                mobileError.innerText = "only digits are allowed";
+            }
+            else if(mobile.length !=10){
+                status = false;
+                mobileError.innerText = "invalid mobile number";
+            }
+            else
+             mobileError.innerText = "";
+            return status;
+        }
+        function togglePassword(currentObj){
+            let passwordInput = document.getElementById("password");
+            if(currentObj.innerText == "Show"){
+                passwordInput.type = "text";
+                currentObj.innerText = "Hide";
+            }
+            else if(currentObj.innerText == "Hide"){
+                passwordInput.type = "password";
+                currentObj.innerText = "Show";
+            }
+        }
+        function validatePassword(){
+            let status = true;
+            let password = document.getElementById("password").value;
+            let passwordError = document.getElementById("passwordError");
+            if(password.length == 0){
+                status = false;
+                passwordError.innerText = "password is required";
+            }
+            else if(password.length < 6 || password.length > 10){
+                status = false;
+                passwordError.innerText = "password must be between 6 and 10";
+            }
+            else
+             passwordError.innerText = "";
+            return status;
+        }
+        function validateUsername(){
+            let status = true;
+            let username = document.getElementById("username").value;
+            let usernameError = document.getElementById("usernameError");
+            if(username.length == 0){
+                usernameError.innerText = "username is required";
+                status = false;
+            }
+            else
+             usernameError.innerText = "";
+            return status;
+        }
+        function validateForm(){
+           let usernameStatus =  validateUsername();
+           let passwordStatus = validatePassword();
+           let mobileStatus = validateMobile();
+           let qualificationStatus = validateQualification();
+           let profileStatus = validateProfile();
+           if(usernameStatus && passwordStatus && mobileStatus && qualificationStatus && profileStatus)
+            return true;
+           return false;
+        }
+    </script>
+   </div>
+</body>
+
+</html>
+
+
+
+
+
+
+
