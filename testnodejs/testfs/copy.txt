@@ -1,0 +1,6 @@
+NodeJs application is super fast.
+NodeJs is javascript runtime envionrment.
+In NodeJs, Javascript is everywhere.
+NodeJs is build upon google chrome v8 engine.
+NodeJs is based on Single threaded javascript event loop model.
+NodeJs application is super fast and highly scalable.
