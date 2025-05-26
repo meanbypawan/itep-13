@@ -16,7 +16,8 @@
             <input name="name" type="text" class="form-control" placeholder="Enter name"/>
           </div>
           <div class="form-group">
-            <input name="email" type="email" class="form-control" placeholder="Enter email id"/>
+            <input onblur="checkForEmailId(this.value)" name="email" type="email" class="form-control" placeholder="Enter email id"/>
+            <small id="emailError"></small>
           </div>
           <div class="form-group">
             <input name="password" type="password" class="form-control" placeholder="Enter password"/>
@@ -30,6 +31,26 @@
        </form>
     </div>
    </div>
+   <script>
+    function checkForEmailId(email){
+       let xhttp = new XMLHttpRequest();
+       xhttp.open("GET",`http://localhost:3000/user/check-for-email-id/${email}`,true);
+       xhttp.send();
+       xhttp.onreadystatechange = function(){
+        if(xhttp.readyState == 4){
+          let response = xhttp.responseText;
+          response = JSON.parse(response);
+          let emailError = document.getElementById("emailError");
+          response.status ? emailError.setAttribute("class","text-danger") : emailError.setAttribute("class","text-success");
+          emailError.innerText = response.message;  
+        }
+       }
+    }
+   </script>
 </body>
 
 </html>
+
+
+
+
