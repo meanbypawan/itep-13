@@ -4,9 +4,13 @@ export const signIn = (request,response,next)=>{
   let {email,password} = request.body;
   User.find(email,password)
   .then(result=>{
-    if(result.length)
+    if(result.length){
+      console.log(result);
+      request.session.isLoggedIn = true;
+      request.session.currentUser = result[0];
       return response.redirect("/");
-    else
+    
+    }else
       return response.redirect("/sign-in");
   })
   .catch(err=>{
@@ -36,3 +40,20 @@ export const signUp = (request,response,next)=>{
     response.end("Something wrong....");
   });
 }
+
+export const signOut = (request,response,next)=>{
+   request.session.isLoggedIn = false;
+   request.session.currentUser = null;
+   request.session.destroy();
+   return response.redirect("/");
+}
+
+
+
+
+
+
+
+
+
+
