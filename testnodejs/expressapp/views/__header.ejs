@@ -1,27 +1,27 @@
-<nav class="navbar navbar-expand-sm bg-light navbar-light">
+<nav class="navbar navbar-expand-sm bg-dark navbar-light">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Express-App</a>
+        <a class="nav-link text-white" href="#">Express-App</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link text-white" href="/">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/about">About us</a>
+        <a class="nav-link text-white" href="/about">About us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/contact">Contact us</a>
+        <a class="nav-link text-white" href="/contact">Contact us</a>
       </li>
       <%if(!isLoggedIn){%>
        <li class="nav-item">
-         <a class="nav-link" href="/sign-in">SignIn</a>
+         <a class="nav-link text-white" href="/sign-in">SignIn</a>
        </li>
        <li class="nav-item">
-         <a class="nav-link" href="/sign-up">SignUp</a>
+         <a class="nav-link text-white" href="/sign-up">SignUp</a>
        </li>
       <%}else{%>
         <li class="nav-item">
-          <a class="nav-link" href="/user/sign-out">Sign out</a>
+          <a class="nav-link text-white" href="/user/sign-out">Sign out</a>
         </li>
       <%}%>  
     </ul>

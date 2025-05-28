@@ -7,7 +7,20 @@
 
 <body>
     <%-include("__header.ejs")%>
-
+    <div class="container mt-3">
+        <div class="row">
+            <%for(let product of products){%>
+              <div class="col-md-3 p-2">
+                <div class="d-flex justify-content-center flex-column align-items-center" style="box-shadow: 10px 10px 10px grey; height: 350px;">
+                    <img src="<%=product.thumbnail%>" width="100%" height="250px"/>
+                    <p><%=product.title%></p>
+                    <p><b class="text-success"><%=product.price%> Rs.</b></p>
+                    <a href="/product/<%=product.id%>" class="btn btn-warning" style="width:100%">View more</a>
+                </div>
+              </div>
+            <%}%>
+        </div>
+    </div>
 </body>
 
 </html>

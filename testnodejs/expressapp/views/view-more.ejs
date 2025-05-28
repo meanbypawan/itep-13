@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <%-include("__bootstrap.ejs")%>
+    </head>
+    <body>
+        <%-include("__header.ejs")%>
+        <div class="container mt-3">
+           <div class="row">
+            <div class="col-md-6" style="box-shadow: 10px 10px 10px grey;">
+                <img src="<%=product.thumbnail%>" width="100%" height="500px;"/>
+            </div>
+            <div class="col-md-6" style="height: 550px; box-shadow: 10px 10px 10px grey;">
+               <div class="p-3 d-flex flex-column"> 
+                 <h4><%=product.title%><b class="text-info">[<%=product.brand%>]</b></h4>
+                 <hr style="width:100%; height: 1px;background-color:grey;"/>
+                 <p><%=product.description%></p>
+                 <p><b>Warranty Information : </b><%=product.warrantyInformation%></p>
+                 <p><b>Shipping Information : </b><%=product.shippingInformation%></p>
+                 <p><b>Availability status : </b><%=product.availabilityStatus%></p>
+                 <p><b>Return policy : </b><%=product.returnPolicy%></p>
+                 <p><b>Stock : </b><%=product.stock%></p>
+                 <p><b>Rating: </b><span class="text-warning"><%=product.rating%>/(5)</span></p>
+                 <p><b>Discount : </b><%=product.discountPercentage%>%</p>
+                 <p>
+                    <b>Final price : </b>
+                    <del class="text-danger"><%=(product.price)%></del>
+                    <span class="text-success" style="font-weight: bolder; font-size: 20px;"><%=(product.price-(product.discountPercentage*product.price)/100).toFixed(2)%> &nbsp;Rs.</span>
+                </p>
+                 <a href="/product/buy-now/<%=product.id%>" class="btn btn-warning" style="width: 100%;">Buy now</a>
+                </div>
+            </div>
+           </div>
+        </div>
+    </body>
+</html>

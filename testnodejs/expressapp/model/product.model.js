@@ -42,6 +42,17 @@ class Product{
             });
         });
     }
+    static findById(productId){
+      return new Promise((resolve,reject)=>{
+            pool.getConnection((err,con)=>{
+               let sql = "select * from product where id = ?";
+               con.query(sql,[productId*1],(err,result)=>{
+                con.release();
+                err ? reject(err) : resolve(result);
+               })
+            });
+        });
+    }
 }
 export default Product;
 
