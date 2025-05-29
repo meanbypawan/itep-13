@@ -1,5 +1,10 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-light">
     <ul class="navbar-nav">
+      <%if(isLoggedIn){%>
+      <li>
+        <img src="/user_profile/<%=currentUser.profile%>" width="40px" height="40px" style="border-radius: 50%;"/>
+      </li>
+      <%}%>
       <li class="nav-item active">
         <a class="nav-link text-white" href="#">Express-App</a>
       </li>
@@ -20,6 +25,9 @@
          <a class="nav-link text-white" href="/sign-up">SignUp</a>
        </li>
       <%}else{%>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="/user/profile">Change profile</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link text-white" href="/user/sign-out">Sign out</a>
         </li>

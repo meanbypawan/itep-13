@@ -1,5 +1,21 @@
 import User from "../model/user.model.js";
-
+export const uploadProfile = (request,response,next)=>{
+  if(request.file){
+    let fileName = request.file.filename;
+    let currentUser = request.session.currentUser;
+    let userId = currentUser.id;
+    User.updateOne(fileName,userId)
+    .then(result=>{
+      return response.redirect("/");
+    }).catch(err=>{
+      console.log(err);
+    });
+  }
+  
+}
+export const profilePage = (request,response,next)=>{
+  return response.render("profile.ejs",{currentUser: request.session.currentUser,isLoggedIn: request.session.isLoggedIn});
+}
 export const signIn = (request,response,next)=>{
   let {email,password} = request.body;
   User.find(email,password)

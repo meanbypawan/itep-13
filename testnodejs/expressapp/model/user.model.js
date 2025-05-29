@@ -1,5 +1,4 @@
 import pool from "../db/dbConfig.js";
-
 class User{
     constructor(id,name,email,password,contact){
         this.id = id;
@@ -7,6 +6,20 @@ class User{
         this.email = email;
         this.password = password;
         this.contact = contact;
+    }
+    static updateOne(fileName,userId){
+        return new Promise((resolve,reject)=>{
+           pool.getConnection((err,con)=>{
+              if(!err){   
+                  let sql = "update user set profile = ? where id = ?";
+                  con.query(sql,[fileName,userId],(err,result)=>{
+                    con.release();
+                    err ? reject(err) : resolve(result);
+                  })
+              }
+              else reject(err);
+           });
+        });
     }
     static find(email,password){
         return new Promise((resolve,reject)=>{
