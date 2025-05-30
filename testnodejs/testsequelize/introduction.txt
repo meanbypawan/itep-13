@@ -1,0 +1,23 @@
+Sequelize :-
+  ORM[Object Relational Mapping] Tool 
+
+    Programmer
+----------------
+  ORM [Sequelize]
+----------------
+Native SQL Query  
+---------------------------------------
+Object Relational Mapping
+Customer
+{
+  id:100,
+  name:"ABC",
+  contact:343434
+}
+
+Object<----> Sequelize<---->Table[Relation]
+
+Databae Table-->customer(id,name,contact)
+
+
+
