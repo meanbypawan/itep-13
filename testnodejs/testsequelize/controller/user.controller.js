@@ -1,7 +1,7 @@
 import { validationResult } from "express-validator";
 import bcrypt from "bcryptjs";
 import User from "../model/user.model.js"
-
+import jwt from "jsonwebtoken";
 export const signIn = async(request,response,next)=>{
    try{
       let {email,password} = request.body;
@@ -9,7 +9,7 @@ export const signIn = async(request,response,next)=>{
       let user = await User.findOne({where:{email},raw: true});
       if(user){
          let status = bcrypt.compareSync(password,user.password); 
-         return status ? response.status(200).json({message: "Sign In Success",user}) : response.status(401).json({error: "Unauthorized user | Invalid Password"});
+         return status ? response.status(200).json({token: generateToken(),message: "Sign In Success",user}) : response.status(401).json({error: "Unauthorized user | Invalid Password"});
       }
       return response.status(401).json({error: "Unauthorized user | Invalid Email Id"});
    }
@@ -32,3 +32,16 @@ export const signUp = async(request,response,next)=>{
         return response.status(500).json({error: "Internal Server Error"});
     }
 }
+
+const generateToken = (userId,emailId)=>{
+   let payload = {userId: userId,email: emailId};
+   // xx.yy.zz
+   let token = jwt.sign(payload,"fsdfksdjfweroiuriuvvxcmvxnv");
+   console.log(token);
+   return token;
+}
+
+
+
+
+
