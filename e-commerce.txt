@@ -1,0 +1,33 @@
+
+  E-Commerce Application :-
+  Backend Application :- Express Application
+  Admin
+  User :-
+  Features :-
+    Sign up
+    Sign in
+    View product list
+    Manage profile [View, update, Create]
+    sign out
+    Mange Order [Create, view, cancel]
+  Search Product 
+  Filter [price]
+   
+  Database Desing :-
+   User[name,email,password,contact,profile:{image,address}]
+   
+   Product[title,price,..........................]
+    
+   Order :[orderDate,userId,productId,deliveryAddress,contactPerson,totalBillAmount] 
+   
+   Category :[slug,url,name]
+   
+    
+  Frontend
+  
+  
+  
+  
+  
+  
+  
