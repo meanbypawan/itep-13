@@ -23,7 +23,11 @@ const userSchema = new mongoose.Schema({
     profile:{
         imageName:String,
         address:String
+    },
+    isVerified:{
+        type: Boolean,
+        default: false
     }
-});
+},{versionKey: false});
 
 export const User = mongoose.model("user",userSchema);
