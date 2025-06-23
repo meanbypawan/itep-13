@@ -1,0 +1,68 @@
+You're hired to build the backend of an online course platform like Coursera. The system manages students, courses, instructors, and enrollments.
+
+📘 Entities & Relationships
+Entity	Fields
+Student:-	id, name, email
+Instructor:-	id, name, bio
+Course:-	id, title, description, instructorId
+Enrollment:-	id, studentId, courseId, enrolledAt
+
+🔗 Relationships
+One Instructor can teach many Courses.
+
+One Course can have many Enrollments.
+
+One Student can be enrolled in many Courses (Many-to-Many via Enrollment).
+
+✅ APIs to Implement
+👨‍🎓 Students
+POST /students — Create a new student
+
+GET /students — Get all students
+
+GET /students/:id — Get a specific student
+
+PUT /students/:id — Update a student
+
+DELETE /students/:id — Delete a student
+
+👨‍🏫 Instructors
+POST /instructors — Create a new instructor
+
+GET /instructors — List all instructors
+
+GET /instructors/:id — Get instructor with their courses
+
+PUT /instructors/:id — Update instructor details
+
+DELETE /instructors/:id — Delete instructor
+
+📚 Courses
+POST /courses — Create a new course under an instructor
+
+GET /courses — Get all courses with instructor info
+
+GET /courses/:id — Get course with enrolled students
+
+PUT /courses/:id — Update course details
+
+DELETE /courses/:id — Delete a course
+
+📥 Enrollments
+POST /enrollments — Enroll a student into a course
+
+GET /enrollments — List all enrollments with student & course info
+
+GET /students/:id/enrollments — All courses a student is enrolled in
+
+DELETE /enrollments/:id — Cancel an enrollment
+
+🔨 Features Covered
+Feature	Covered in Scenario
+CRUD operations	✅ All models
+One-to-many relationships	✅ Instructor → Courses
+Many-to-many relationships	✅ Student ↔ Course via Enrollment
+Sequelize model definitions	✅ Required
+API status codes	✅ Good practice
+Validation & error handling	✅ Strongly encouraged
+Associations & include	✅ Needed in GETs
