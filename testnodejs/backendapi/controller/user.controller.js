@@ -5,19 +5,27 @@ import nodemailer from "nodemailer";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 dotenv.config();
+export const list = async(request,response,next)=>{
+    try{
+       const users = await User.find();
+       return response.status(200).json({users});
+    } 
+    catch(err){
+        return response.status(500).json({error :"Internal Server Error"});
+    }
+}
 export const createUser = async (request, response, next) => {
     try {
         const errors = validationResult(request);
         if (!errors.isEmpty())
             return response.status(400).json({ error: "Bad request", errorMessages: errors.array() });
         let { password, name, contact, email } = request.body;
-        const saltKey = bcrypt.genSaltSync(12);
-        password = bcrypt.hashSync(password, saltKey);
         let result = await User.create({ name, password, contact, email });
         await sendEmail(email,name);
         return response.status(201).json({ message: "user created", user: result });
     }
     catch (err) {
+        console.log(err);
         return response.status(500).json({ error: "Internal Server Error" });
     }
 }
@@ -86,7 +94,7 @@ const sendEmail = (email,name) => {
         };
         transporter.sendMail(mailOptions, function (error, info) {
             if (error) {
-                reject(err);
+                reject(error);
             } else {
               resolve();
             }

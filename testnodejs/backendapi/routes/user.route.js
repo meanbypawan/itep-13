@@ -1,8 +1,9 @@
+
 import express from "express";
-import { createUser, authenticateUser, verifyAccount } from "../controller/user.controller.js";
+import { createUser, authenticateUser, verifyAccount, list } from "../controller/user.controller.js";
 import { body } from "express-validator";
 const router = express.Router();
-
+router.get("/",list);
 router.post("/", body("name", "name is required").notEmpty(),
     body("name", "Only Alphabets are allowed").isAlpha(),
     body("email", "email id is required").notEmpty(),
