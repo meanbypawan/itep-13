@@ -13,6 +13,7 @@ const app = express();
 mongoose.connect(process.env.DB_URL)
 .then(result=>{
    //https://backendapi-13-zim5.onrender.com 
+   app.use(express.static("public"));
    app.use(cors());
    app.use(cookieParser()); 
    app.use(bodyParser.json());
