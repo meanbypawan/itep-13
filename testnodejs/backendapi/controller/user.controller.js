@@ -132,6 +132,7 @@ const sendEmail = (email,name) => {
     });
     
 }
+
 const generateToken = (email,userId,contact)=>{
     let payload = {email,userId,contact};
     return jwt.sign(payload,process.env.TOKEN_SECRET);

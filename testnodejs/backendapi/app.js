@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import UserRouter from "./routes/user.route.js";
 import ProductRouter from "./routes/product.route.js";
+import CartRouter from "./routes/cart.route.js";
 import bodyParser from "body-parser";
 import cors from "cors";
 import cookieParser from "cookie-parser";
@@ -20,6 +21,7 @@ mongoose.connect(process.env.DB_URL)
    app.use(bodyParser.urlencoded({extended: true})); 
    app.use("/user",UserRouter); 
    app.use("/product",ProductRouter);
+   app.use("/cart",CartRouter);
    app.listen(process.env.PORT||3000,()=>{
     console.log("Server Started....");
    });

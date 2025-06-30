@@ -23,7 +23,33 @@
    Category :[slug,url,name]
    
     
-  Frontend
+  http://localhost:3000/user/profile
+  POST; {userId:fsdlfsdklfjsdlfjs,address:"Rajmohalla",imageName:"?.png"}
+  
+  http://localhost:3000/public/profile/dc7c44ba7563d2495a6932b4725ea72b
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
