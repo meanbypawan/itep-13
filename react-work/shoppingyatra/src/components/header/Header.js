@@ -1,4 +1,8 @@
+import { useContext } from "react";
+import { CategoryContext } from "../../App";
+
 function Header(){
+    let {categoryList} = useContext(CategoryContext);
     return <>
       <div className="container-fluid">
         <div className="row bg-secondary py-1 px-xl-5">
@@ -90,15 +94,8 @@ function Header(){
                                 <a href="" className="dropdown-item">Baby's Dresses</a>
                             </div>
                         </div>
-                        <a href="" className="nav-item nav-link">Shirts</a>
-                        <a href="" className="nav-item nav-link">Jeans</a>
-                        <a href="" className="nav-item nav-link">Swimwear</a>
-                        <a href="" className="nav-item nav-link">Sleepwear</a>
-                        <a href="" className="nav-item nav-link">Sportswear</a>
-                        <a href="" className="nav-item nav-link">Jumpsuits</a>
-                        <a href="" className="nav-item nav-link">Blazers</a>
-                        <a href="" className="nav-item nav-link">Jackets</a>
-                        <a href="" className="nav-item nav-link">Shoes</a>
+                        {categoryList.map((category,index)=>{return <a href="" className="nav-item nav-link" key={index}>{category.name}</a>})}
+                        
                     </div>
                 </nav>
             </div>
