@@ -1,8 +1,10 @@
 import axios from "axios";
 import { useEffect, useReducer } from "react";
 import EndPoint from "../../apis/EndPoint";
+import { useNavigate } from "react-router-dom";
 
 function FeatureProducts(){
+    const navigate = useNavigate();
     const [state,dispatch] = useReducer((state,action)=>{
         if(action.type == "set-products"){
             state.productList = action.payload;
@@ -35,7 +37,7 @@ function FeatureProducts(){
                         <div className="product-action">
                             <a className="btn btn-outline-dark btn-square" href=""><i className="fa fa-shopping-cart"></i></a>
                             <a className="btn btn-outline-dark btn-square" href=""><i className="far fa-heart"></i></a>
-                            <a className="btn btn-outline-dark btn-square" href=""><i className="fa fa-sync-alt"></i></a>
+                            <a className="btn btn-outline-dark btn-square" onClick={()=>navigate(`/view-more/${product._id}`)}><i className="fa fa-info-circle"></i></a>
                             <a className="btn btn-outline-dark btn-square" href=""><i className="fa fa-search"></i></a>
                         </div>
                     </div>

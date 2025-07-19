@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { CategoryContext } from "../../App";
+import { Link } from "react-router-dom";
 
 function Header(){
     let {categoryList} = useContext(CategoryContext);
@@ -110,7 +111,7 @@ function Header(){
                     </button>
                     <div className="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div className="navbar-nav mr-auto py-0">
-                            <a href="index.html" className="nav-item nav-link active">Home</a>
+                            <Link to="/" className="nav-item nav-link active">Home</Link>
                             <a href="shop.html" className="nav-item nav-link">Shop</a>
                             <a href="detail.html" className="nav-item nav-link">Shop Detail</a>
                             <div className="nav-item dropdown">

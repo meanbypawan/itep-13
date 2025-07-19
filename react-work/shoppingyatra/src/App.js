@@ -4,6 +4,7 @@ import Home from './components/home/Home';
 import { act, createContext, useContext, useEffect, useReducer, useState } from 'react';
 import axios from 'axios';
 import EndPoint from './apis/EndPoint';
+import ViewMore from './components/view-more/ViewMore';
 
 export const CategoryContext = createContext();
 function App() {
@@ -33,6 +34,7 @@ function App() {
    <CategoryContext value={{categoryList: state.categoryList}}>
     <Routes>
       <Route path='/' element={<Home/>}/>
+      <Route path='view-more/:id' element={<ViewMore/>}/>
     </Routes>    
    </CategoryContext> 
   </>
