@@ -1,0 +1,56 @@
+Hospital Management System (Express + Mongoose + Postman)
+Design a backend API to manage doctors, patients, and their medical records using Express.js and Mongoose.
+
+Data Models 
+1. Doctor
+Fields: name, specialization
+
+Relationship:
+
+One-to-Many → A doctor can have multiple patients.
+
+2. Patient
+Fields: name, age
+
+Relationship:
+
+Many-to-One → Each patient belongs to one doctor.
+
+One-to-One → Each patient has one medical record.
+
+3. Medical Record
+Fields: bloodGroup, allergies
+
+Relationship:
+
+One-to-One → One medical record belongs to one patient only.
+
+
+ API Endpoints 
+ Doctor Routes (/doctors)
+Method	Endpoint	Purpose	Success	Error Example
+POST	/doctors	Create a new doctor	201 Created	400 Bad Request if name/specialization missing
+GET	/doctors	Get list of all doctors	200 OK	500 Internal Server Error
+GET	/doctors/:id	Get doctor details with their patients	200 OK	404 Not Found if doctor doesn't exist
+
+ Patient Routes (/patients)
+Method	Endpoint	Purpose	Success	Error Example
+POST	/patients	Create a patient and assign to a doctor	201 Created	400 Bad Request if doctor not found
+GET	/patients	Get list of all patients	200 OK	500 Internal Server Error
+GET	/patients/:id	Get patient details with doctor & record	200 OK	404 Not Found if patient doesn't exist
+PUT	/patients/:id	Update patient information	200 OK	400 Bad Request for invalid data
+DELETE	/patients/:id	Delete patient and related medical record	200 OK	404 Not Found if patient/record not found
+
+ Medical Record Routes (/medical-records)
+Method	Endpoint	Purpose	Success	Error Example
+POST	/medical-records/:patientId	Create record for patient	201 Created	404 Not Found if patient doesn't exist
+GET	/medical-records/:id	Get record with patient info	200 OK	404 Not Found if record doesn't exist
+PUT	/medical-records/:id	Update medical record	200 OK	400 Bad Request for invalid data
+DELETE	/medical-records/:id	Delete medical record	200 OK	404 Not Found if record doesn't exist
+
+
+MARKS DISTRIBUTION:--
+END POINTS-- 1/2 ----  6 marks
+
+ROUTING---    2 marks
+Association-  2 marks
