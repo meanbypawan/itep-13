@@ -122,6 +122,8 @@ function Header(){
                                 </div>
                             </div>
                             <a href="contact.html" className="nav-item nav-link">Contact</a>
+                            <Link to="/sign-in" className="nav-item nav-link">Sign in</Link>
+                            <Link to="/sign-up" className="nav-item nav-link">Sign up</Link>
                         </div>
                         <div className="navbar-nav ml-auto py-0 d-none d-lg-block">
                             <a href="" className="btn px-0">

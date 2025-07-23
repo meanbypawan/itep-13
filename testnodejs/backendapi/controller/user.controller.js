@@ -52,7 +52,7 @@ export const createUser = async (request, response, next) => {
         let { password, name, contact, email } = request.body;
         let result = await User.create({ name, password, contact, email });
         await sendEmail(email,name);
-        return response.status(201).json({ message: "user created", user: result });
+        return response.status(201).json({ message: "user created , Open gmail to verify account", user: result });
     }
     catch (err) {
         console.log(err);

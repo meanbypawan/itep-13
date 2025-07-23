@@ -1,5 +1,7 @@
+const BASE_URL = "http://localhost:3000"
 export default {
-  PRODUCT_LIST: "http://localhost:3000/product",
-  CATEGORY_LIST:"http://localhost:3000/category/list",
-  FETCH_PRODUCT: "http://localhost:3000/product"
+  PRODUCT_LIST: BASE_URL+"/product",
+  CATEGORY_LIST: BASE_URL+"/category/list",
+  FETCH_PRODUCT: BASE_URL+"/product",
+  SIGN_UP: BASE_URL+"/user"
 }

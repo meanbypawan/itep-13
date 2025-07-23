@@ -5,6 +5,8 @@ import { act, createContext, useContext, useEffect, useReducer, useState } from 
 import axios from 'axios';
 import EndPoint from './apis/EndPoint';
 import ViewMore from './components/view-more/ViewMore';
+import SignIn from './components/sign-in/SignIn';
+import SignUp from './components/sign-up/SignUp';
 
 export const CategoryContext = createContext();
 function App() {
@@ -35,6 +37,8 @@ function App() {
     <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='view-more/:id' element={<ViewMore/>}/>
+      <Route path='sign-in' element={<SignIn/>}/>
+      <Route path='sign-up' element={<SignUp/>}/> 
     </Routes>    
    </CategoryContext> 
   </>
