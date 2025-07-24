@@ -1,10 +1,11 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Header from "../header/Header";
 import { useEffect, useReducer } from "react";
 import axios from "axios";
 import EndPoint from "../../apis/EndPoint";
 
 function ViewMore(){
+    const navigate = useNavigate();
     const {id} = useParams();
     const [state,dispatch] = useReducer((state,action)=>{
         if(action.type == "set-product"){
@@ -24,6 +25,9 @@ function ViewMore(){
       catch(err){
         console.log(err);
       } 
+    }
+    const handleBuyNow = ()=>{
+       navigate("/buy-now",{state:{params:{product:state.product}}});
     }
     return <>
       <Header/>
@@ -66,7 +70,7 @@ function ViewMore(){
                     <p className="mb-4">{state.product.description}</p>
                     
                     <div className="d-flex align-items-center mb-4 pt-2">
-                       <button className="btn btn-primary px-3">Buy now</button>
+                       <button onClick={handleBuyNow} className="btn btn-primary px-3">Buy now</button>
                        <button className="btn btn-outline-primary px-3 ml-2"><i className="fa fa-shopping-cart mr-1"></i> Add To Cart</button>
                     </div>
                     <div className="d-flex pt-2">

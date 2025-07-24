@@ -1,9 +1,16 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CategoryContext } from "../../App";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { isUserExist } from "../auth/Auth";
 
 function Header(){
     let {categoryList} = useContext(CategoryContext);
+    const navigate = useNavigate();
+    const handleSignOut = (event)=>{
+        sessionStorage.setItem("current-user","");
+        sessionStorage.clear();
+        navigate("/");
+    }
     return <>
       <div className="container-fluid">
         <div className="row bg-secondary py-1 px-xl-5">
@@ -122,8 +129,9 @@ function Header(){
                                 </div>
                             </div>
                             <a href="contact.html" className="nav-item nav-link">Contact</a>
-                            <Link to="/sign-in" className="nav-item nav-link">Sign in</Link>
-                            <Link to="/sign-up" className="nav-item nav-link">Sign up</Link>
+                            {!isUserExist() && <Link to="/sign-in" className="nav-item nav-link">Sign in</Link>}
+                            {!isUserExist() && <Link to="/sign-up" className="nav-item nav-link">Sign up</Link>}
+                            {isUserExist() && <Link onClick={handleSignOut} className="nav-item nav-link">Sign out</Link>}
                         </div>
                         <div className="navbar-nav ml-auto py-0 d-none d-lg-block">
                             <a href="" className="btn px-0">

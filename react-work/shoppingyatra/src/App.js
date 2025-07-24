@@ -7,6 +7,8 @@ import EndPoint from './apis/EndPoint';
 import ViewMore from './components/view-more/ViewMore';
 import SignIn from './components/sign-in/SignIn';
 import SignUp from './components/sign-up/SignUp';
+import BuyNow from './components/buy-now/BuyNow';
+import Auth from './components/auth/Auth';
 
 export const CategoryContext = createContext();
 function App() {
@@ -38,7 +40,8 @@ function App() {
       <Route path='/' element={<Home/>}/>
       <Route path='view-more/:id' element={<ViewMore/>}/>
       <Route path='sign-in' element={<SignIn/>}/>
-      <Route path='sign-up' element={<SignUp/>}/> 
+      <Route path='sign-up' element={<SignUp/>}/>
+      <Route path='buy-now' element={<Auth><BuyNow/></Auth>}/> 
     </Routes>    
    </CategoryContext> 
   </>
