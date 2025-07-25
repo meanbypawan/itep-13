@@ -9,7 +9,7 @@ function Header(){
     const handleSignOut = (event)=>{
         sessionStorage.setItem("current-user","");
         sessionStorage.clear();
-        navigate("/");
+        navigate("/home");
     }
     return <>
       <div className="container-fluid">
@@ -27,8 +27,7 @@ function Header(){
                     <div className="btn-group">
                         <button type="button" className="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My Account</button>
                         <div className="dropdown-menu dropdown-menu-right">
-                            <button className="dropdown-item" type="button">Sign in</button>
-                            <button className="dropdown-item" type="button">Sign up</button>
+                            <button onClick={()=>navigate("/profile")} className="dropdown-item" type="button">Manage profile</button>
                         </div>
                     </div>
                     <div className="btn-group mx-2">
@@ -131,7 +130,7 @@ function Header(){
                             <a href="contact.html" className="nav-item nav-link">Contact</a>
                             {!isUserExist() && <Link to="/sign-in" className="nav-item nav-link">Sign in</Link>}
                             {!isUserExist() && <Link to="/sign-up" className="nav-item nav-link">Sign up</Link>}
-                            {isUserExist() && <Link onClick={handleSignOut} className="nav-item nav-link">Sign out</Link>}
+                            {isUserExist() && <label onClick={handleSignOut} className="nav-item nav-link">Sign out</label>}
                         </div>
                         <div className="navbar-nav ml-auto py-0 d-none d-lg-block">
                             <a href="" className="btn px-0">

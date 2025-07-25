@@ -8,6 +8,7 @@ import CategoryRouter from "./routes/category.route.js";
 import bodyParser from "body-parser";
 import cors from "cors";
 import cookieParser from "cookie-parser";
+import OrderRouter from "./routes/order.route.js";
 dotenv.config();
 const app = express();
 
@@ -24,6 +25,7 @@ mongoose.connect(process.env.DB_URL)
    app.use("/product",ProductRouter);
    app.use("/cart",CartRouter);
    app.use("/category",CategoryRouter);
+   app.use("/order",OrderRouter);
    app.listen(process.env.PORT||3000,()=>{
     console.log("Server Started....");
    });

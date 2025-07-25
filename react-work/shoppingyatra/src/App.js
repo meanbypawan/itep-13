@@ -9,6 +9,7 @@ import SignIn from './components/sign-in/SignIn';
 import SignUp from './components/sign-up/SignUp';
 import BuyNow from './components/buy-now/BuyNow';
 import Auth from './components/auth/Auth';
+import Profile from './components/profile/Profile';
 
 export const CategoryContext = createContext();
 function App() {
@@ -38,10 +39,12 @@ function App() {
    <CategoryContext value={{categoryList: state.categoryList}}>
     <Routes>
       <Route path='/' element={<Home/>}/>
+      <Route path='/home' element={<Home/>}/>
       <Route path='view-more/:id' element={<ViewMore/>}/>
       <Route path='sign-in' element={<SignIn/>}/>
       <Route path='sign-up' element={<SignUp/>}/>
       <Route path='buy-now' element={<Auth><BuyNow/></Auth>}/> 
+      <Route path='profile' element={<Auth><Profile/></Auth>}/>
     </Routes>    
    </CategoryContext> 
   </>
