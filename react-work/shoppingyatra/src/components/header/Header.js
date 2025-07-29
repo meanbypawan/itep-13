@@ -1,11 +1,12 @@
 import { useContext, useState } from "react";
 import { CategoryContext } from "../../App";
 import { Link, useNavigate } from "react-router-dom";
-import { isUserExist } from "../auth/Auth";
-
+import { isUserExist, getCurrentUser } from "../auth/Auth";
+import {BASE_URL} from "../../apis/EndPoint";
 function Header(){
     let {categoryList} = useContext(CategoryContext);
     const navigate = useNavigate();
+    let user = getCurrentUser() ?? null;
     const handleSignOut = (event)=>{
         sessionStorage.setItem("current-user","");
         sessionStorage.clear();
@@ -27,7 +28,7 @@ function Header(){
                     <div className="btn-group">
                         <button type="button" className="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My Account</button>
                         <div className="dropdown-menu dropdown-menu-right">
-                            <button onClick={()=>navigate("/profile")} className="dropdown-item" type="button">Manage profile</button>
+                            <button onClick={()=>navigate("/profile")} className="dropdown-item" type="button">Upload profile</button>
                         </div>
                     </div>
                     <div className="btn-group mx-2">
@@ -141,6 +142,7 @@ function Header(){
                                 <i className="fas fa-shopping-cart text-primary"></i>
                                 <span className="badge text-secondary border border-secondary rounded-circle" style={{paddingBottom: "2px"}}>0</span>
                             </a>
+                            {isUserExist() && <img className="ml-2" src={BASE_URL+"/profile/"+user?.profile?.imageName} width="50px" height="50px" style={{borderRadius: "50%"}}/>}
                         </div>
                     </div>
                 </nav>
