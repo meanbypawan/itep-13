@@ -3,13 +3,15 @@ import { CategoryContext } from "../../App";
 import { Link, useNavigate } from "react-router-dom";
 import { isUserExist, getCurrentUser } from "../auth/Auth";
 import {BASE_URL} from "../../apis/EndPoint";
+import { useDispatch, useSelector } from "react-redux";
+import { signOut } from "../../redux-config/UserSlice";
 function Header(){
     let {categoryList} = useContext(CategoryContext);
+    let {isLoggedIn,user} = useSelector((store)=>store.User);
+    const dispatch = useDispatch();
     const navigate = useNavigate();
-    let user = getCurrentUser() ?? null;
     const handleSignOut = (event)=>{
-        sessionStorage.setItem("current-user","");
-        sessionStorage.clear();
+        dispatch(signOut());
         navigate("/home");
     }
     return <>
@@ -129,9 +131,9 @@ function Header(){
                                 </div>
                             </div>
                             <a href="contact.html" className="nav-item nav-link">Contact</a>
-                            {!isUserExist() && <Link to="/sign-in" className="nav-item nav-link">Sign in</Link>}
-                            {!isUserExist() && <Link to="/sign-up" className="nav-item nav-link">Sign up</Link>}
-                            {isUserExist() && <label onClick={handleSignOut} className="nav-item nav-link">Sign out</label>}
+                            {!isLoggedIn && <Link to="/sign-in" className="nav-item nav-link">Sign in</Link>}
+                            {!isLoggedIn && <Link to="/sign-up" className="nav-item nav-link">Sign up</Link>}
+                            {isLoggedIn && <label onClick={handleSignOut} className="nav-item nav-link">Sign out</label>}
                         </div>
                         <div className="navbar-nav ml-auto py-0 d-none d-lg-block">
                             <a href="" className="btn px-0">
@@ -142,7 +144,7 @@ function Header(){
                                 <i className="fas fa-shopping-cart text-primary"></i>
                                 <span className="badge text-secondary border border-secondary rounded-circle" style={{paddingBottom: "2px"}}>0</span>
                             </a>
-                            {isUserExist() && <img className="ml-2" src={BASE_URL+"/profile/"+user?.profile?.imageName} width="50px" height="50px" style={{borderRadius: "50%"}}/>}
+                            {isLoggedIn && <img className="ml-2" src={BASE_URL+"/profile/"+user?.profile?.imageName} width="50px" height="50px" style={{borderRadius: "50%"}}/>}
                         </div>
                     </div>
                 </nav>

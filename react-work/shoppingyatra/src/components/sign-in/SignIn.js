@@ -3,9 +3,12 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import EndPoint from "../../apis/EndPoint";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../redux-config/UserSlice";
 
 function SignIn(){
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const [state,setState] = useState({
         email:"",
         password:""
@@ -15,7 +18,8 @@ function SignIn(){
         event.preventDefault();
         if(state.email && state.password){
           let response = await axios.post(EndPoint.SIGN_IN,state)
-          sessionStorage.setItem("current-user",JSON.stringify(response.data.user));
+          dispatch(setUser(response.data.user));
+          //sessionStorage.setItem("current-user",JSON.stringify(response.data.user));
           navigate(-1);
         }
         else

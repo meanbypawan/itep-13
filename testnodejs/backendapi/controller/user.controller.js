@@ -87,9 +87,9 @@ export const authenticateUser = async (request, response, next) => {
         
         user.password = undefined;
         
-        status && response.cookie("token",generateToken(user.email,user._id,user.contact));
+    
         
-        return status ? response.status(200).json({ message: "Sign in success",user }) : response.status(401).json({ error: "Unauthorized user | Invalid password" });
+        return status ? response.status(200).json({ message: "Sign in success",user,token:generateToken(user.email,user._id,user.contact) }) : response.status(401).json({ error: "Unauthorized user | Invalid password" });
     }
     catch (err) {
         return response.status(500).json({ error: "Internal Server Error" });

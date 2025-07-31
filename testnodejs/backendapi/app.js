@@ -17,7 +17,10 @@ mongoose.connect(process.env.DB_URL)
 .then(result=>{
    //https://backendapi-13-zim5.onrender.com 
    app.use(express.static("public"));
-   app.use(cors());
+   app.use(cors({
+    origin:"http://localhost:3001",
+    credentials: true
+   }));
    app.use(cookieParser()); 
    app.use(bodyParser.json());
    app.use(bodyParser.urlencoded({extended: true})); 

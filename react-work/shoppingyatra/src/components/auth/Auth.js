@@ -1,5 +1,6 @@
 import { Navigate } from "react-router-dom";
 import SignIn from "../sign-in/SignIn";
+import { useSelector } from "react-redux";
 
 export const isUserExist = ()=>{
     return !!sessionStorage.getItem("current-user");
@@ -10,7 +11,8 @@ export const getCurrentUser = ()=>{
    return user;
 }
 function Auth({children}){
-    if(isUserExist())
+    const {user,isLoggedIn} = useSelector((store)=>store.User);
+    if(isLoggedIn)
         return children;
     return <Navigate to="/sign-in"/>
       
