@@ -46,6 +46,7 @@ export const list = async(request,response,next)=>{
         return response.status(500).json({error: "Internal Server Error"});
     }
 }
+
 export const saveInBulk = async(request,response,next)=>{
    try{
       const result = await Product.insertMany(request.body)
