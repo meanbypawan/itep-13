@@ -1,0 +1,15 @@
+// Closure
+// x is local variable
+<script>
+function f1(){
+    let x = 100;
+    function f2(){
+        console.log("In Inner Function : "+x);
+    }
+    return f2;
+}
+
+const inner = f1();
+// 1000 line of code
+inner();
+</script>

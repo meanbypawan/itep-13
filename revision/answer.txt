@@ -1,0 +1,134 @@
+Q.1 What is Javascript ?
+Answer :- 1. Javascript is client side as well as server side scripting language.
+         2. Javscript is dynamically typed scripting language
+         3. Javascript has capability to convert html into dhtml
+         4. Javascript is function oriented, object oriented multiparadigm scripting language
+         
+         function add(){}
+         function sub(){}
+         function mult(){}
+         ------------------------
+         class Operation{
+             constructor(a,b){
+               this.a = a;
+               this.b = b;
+             }
+             add(){}
+             sub(){}
+             mult(){}
+         }
+         5. Javascript is single threaded language
+         6. Javascript is synchronous by default.
+         
+ Q.2 How Browser Execute Javascript Code         
+ Answer :-   Javascript Code ---> Parsing
+                                |-- Lexical Analysis [Tokenization]
+                                |-- Syntax Analysis [AST [Abstract Syntax Tree]]  
+            AST-----> Iginition-Interpreter----ByteCode ---------> Execute
+                                        |
+                         If there is need of optimization
+                                        |
+                                 Turbofan Compiler
+                                 
+            Execution :-
+               It will activate the call stack
+               Inside call stack global execution context will be created
+               Execution Contect has 2-components [Memory & Code Component]
+               It will execute code line by line
+               If there is any function call then seperate execution context will be created    
+                   
+                   
+                                                               
+            function add(a,b){
+             console.log(a);
+             console.log(b);
+             let c = a + b;
+             console.log("Addition : "+c); 
+            }
+  4. What is DOM ?
+  Answer :- It stands for Doucment Object Model
+           It helps convert html into dhtml
+           Provide library to manipulate html elements
+           Allows us to perfrom some operation in html page.
+  
+  5.   How peform click event on DOM element using javascript ?
+  Answer :-  <button id="btn" onclick="handleClick()">ClickMe</button>
+            
+            let btnObj = document.getElementById("btn");
+            btnObj.addEventListener("click",function(){
+            
+            });
+  6. Explain alert() and confirm()
+  7. Difference Between Undefined and null      
+
+     undefined :- 
+       var x; // undefined
+       var x = undefined;
+
+      1.If variable is decleared but not initialized.
+      2.Type of undefined value is undefined
+      3. 20 + undefined , 20 * undefined ===> NaN
+      4. undefined == null => true, undefined === null ==> false
+      5. undefined can not be used in json
+     null :- 
+     1. Need to assign null              
+     2. Type of null is object.      
+     3. 20 + null = 20 , 20 * null = 0    
+     4. null can be used in json
+  8. What is function in Javascript ? can we overload the function in js ?
+ Answer :- It is block of code .
+           Give us modular approach
+           Make Trouble shooting easy
+           Help in code reusability
+           Manage Code redundancy.
+        In Javascript we can not overload the function.   
+         
+  9. Function Statement v/s Function Expression
+  Answer :-
+      Function Statement :-
+      ------------------------------------------------
+      function add(){
+        console.log("Function Statement...");
+      }
+      1. It is hoisted
+      ---------------------------------------------------
+      Function Expression :-
+      var add = function(){
+        console.log("Function Expression....");
+      }
+      1. It is not hoisted
+      ------------------------------------------------------
+  normal function[function keyword] v/s Arrow function
+  In arrow function this will refer it's global context
+  but in normal function this will refere current context.        
+
+Q11. What is callback ? Explain with suitable example.
+Answer :- Callback is a function which passed as a argument ot another function and
+supposed to executed later.
+It is used to handle asynchronous operation in javascript .
+
+For Example :-
+function sayHello(){
+  console.log("Hello Students..");
+}
+setTimeout(sayHello,5000);
+
+         
+Q12. What is Closoure ?
+Answer :-
+
+Q. var v/s let v/s const
+
+var :- it is hoisted can be used before declaration.
+2. in case var , we can redefine the variable.
+   var x = 100;
+   var x = "Hello"
+3. var is function scopic.
+
+let :- It is also hoisted but enter in temporal deadzone.
+2. We cannot redefine the variable
+3. Block Scopic
+const :- It is also hoisted but enter in temporal deadzone.
+         
+         
+         

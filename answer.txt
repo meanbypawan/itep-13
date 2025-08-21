@@ -1,0 +1,73 @@
+Q.1 What is Javascript ?
+Answer :- 1. Javascript is client side as well as server side scripting language.
+         2. Javscript is dynamically typed scripting language
+         3. Javascript has capability to convert html into dhtml
+         4. Javascript is function oriented, object oriented multiparadigm scripting language
+         
+         function add(){}
+         function sub(){}
+         function mult(){}
+         ------------------------
+         class Operation{
+             constructor(a,b){
+               this.a = a;
+               this.b = b;
+             }
+             add(){}
+             sub(){}
+             mult(){}
+         }
+         5. Javascript is single threaded language
+         6. Javascript is synchronous by default.
+         
+ Q.2 How Browser Execute Javascript Code         
+ Answer :-   Javascript Code ---> Parsing
+                                |-- Lexical Analysis [Tokenization]
+                                |-- Syntax Analysis [AST [Abstract Syntax Tree]]  
+            AST-----> Iginition-Interpreter----ByteCode ---------> Execute
+                                        |
+                         If there is need of optimization
+                                        |
+                                 Turbofan Compiler
+                                 
+            Execution :-
+               It will activate the call stack
+               Inside call stack global execution context will be created
+               Execution Contect has 2-components [Memory & Code Component]
+               It will execute code line by line
+               If there is any function call then seperate execution context will be created    
+                   
+                   
+                                                               
+            function add(a,b){
+             console.log(a);
+             console.log(b);
+             let c = a + b;
+             console.log("Addition : "+c); 
+            }
+  4. What is DOM ?
+  Answer :- It stands for Doucment Object Model
+           It helps convert html into dhtml
+           Provide library to manipulate html elements
+           Allows us to perfrom some operation in html page.
+  
+  5.   How peform click event on DOM element using javascript ?
+  Answer :-  <button id="btn" onclick="handleClick()">ClickMe</button>
+            
+            let btnObj = document.getElementById("btn");
+            btnObj.addEventListener("click",function(){
+            
+            });
+  6. Explain alert() and confirm()
+  7. Difference Between Undefined and null                    
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         

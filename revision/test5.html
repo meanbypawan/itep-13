@@ -1,0 +1,22 @@
+<html>
+    <body>
+        <div id="p1">
+            <div id="p2">
+                <button id="btn">Click me</button>
+            </div>
+        </div>
+        <script>
+            document.getElementById("btn").addEventListener("click",function(){
+                console.log("Button Clicked..");
+            },true)
+
+            document.getElementById("p2").addEventListener("click",function(){
+                console.log("P2 Parent Clicked...");
+            },true);
+
+            document.getElementById("p1").addEventListener("click",function(){
+                console.log("P3 Parent Clicked...");
+            },true);
+        </script>
+    </body>
+</html>

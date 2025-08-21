@@ -1,0 +1,50 @@
+🚀 Problem Statement: MERN Product CRUD App
+
+Build a simple MERN application that allows users to perform CRUD operations on products.
+No authentication required.
+
+📌 Requirements
+
+Each Product should have:
+
+name (String)
+
+price (Number)
+
+description (String)
+
+Implement following REST API routes:
+
+Routes
+
+Create Product
+
+POST /api/products
+
+
+Request Body: { name, price, description }
+
+Response: Created product
+
+Get All Products
+
+GET /api/products
+
+
+Response: List of all products
+
+Update Product by ID
+
+PUT /api/products/:id
+
+
+Request Body: { name, price, description }
+
+Response: Updated product
+
+Delete Product by ID
+
+DELETE /api/products/:id
+
+
+Response: { message: "Product deleted" }
