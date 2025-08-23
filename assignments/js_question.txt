@@ -1,0 +1,58 @@
+Q1: Using Callback Function
+
+Create a function getStudentMarks(studentId, callback) that simulates fetching marks of a student from a database.
+
+If studentId > 0, return marks after 2 seconds.
+
+If studentId <= 0, return an error.
+
+
+
+Expected output:
+
+Marks: 85   // (some random marks)
+Or:
+
+Error: Invalid Student ID
+
+Q2: Using Promise
+
+Create a function fetchStudentData(studentId) that returns a Promise.
+
+If studentId > 0, resolve with { id, name, marks } after 2 seconds.
+
+If studentId <= 0, reject with "Invalid Student ID".
+
+
+Expected output:
+
+Student: { id: 2, name: "Aman", marks: 92 }
+
+Q3 (Bonus Challenge): Combine Both
+
+Write a program where:
+
+You first get student marks using callback.
+
+Then use those marks in a Promise to decide if the student has passed (marks >= 40).
+
+
+Q4. We have Following JSON Data
+    {
+       "age": 24,
+       "next" :{
+          "age": 25,
+          "next": {
+             "age" : 26,
+             "next":{
+                "age": 27,
+                "next":{
+                   "age" : 28
+                }
+             }
+          }   
+       }   
+    }
+  You have to pare above json data and Generate Folloing output.
+  [24,25,26,27,28]  
+  

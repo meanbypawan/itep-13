@@ -129,6 +129,10 @@ let :- It is also hoisted but enter in temporal deadzone.
 2. We cannot redefine the variable
 3. Block Scopic
 const :- It is also hoisted but enter in temporal deadzone.
-         
+------------------------------------------------------------------
+What is NodeJS :-
+  Ans :- NodeJs is javascript runtime renviornment. It allow us
+  to executed javascript outside the browser.
+  It is best suitable to build IO-Intensive application         
          
          
