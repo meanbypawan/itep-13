@@ -134,5 +134,58 @@ What is NodeJS :-
   Ans :- NodeJs is javascript runtime renviornment. It allow us
   to executed javascript outside the browser.
   It is best suitable to build IO-Intensive application         
-         
+------------------------------------------------------------------------
+What is express ? What are the middlewares ? Features Of Express ?
+Types of Middleware . 
+Error handling Middleware.
+CORS.
+REST - API
+JWT
+-------------------------------------------------------------------------
+
+Relation-ship In Database :-
+  1. One To One :-
+     Table - A and Table - B
+     Record Of Table-A is associated with exactly one record of 
+     Table-B is called One-To-One
+     For. Example :-
+     E-commerce Application :-
+     User Table and Cart-Table
+     User has one Cart Only :- It means one user record is only associated
+     with one record of cart table.
+
+     Employee Table and Account Table
+     One Employee has only one account
+
+     User (id,name,contact)
+     Passport(passportId, userId,passportNumber)
+
+  2. One To Many :-
+      Table-A and Table-B
+      If One record of Table-A is associated with multiple record
+      of Table-B , is called one to Many from A--->B
+      and Many To One From B---->A
+
+      Example :-
+      1. Category has many Products [categoryId[F.K]]
+      
+      Social Media
+      User has any Post [userId(FK)]
+      Post has many comment 
+      Post has many likes
+
+      School Management :-
+      One class has many students
+      One department has many employees
+
+  3. Many to Many [Third Table / Supporting Table []]
+
+  Table-A and Table-B
+  Table-AB [A-FK, B-FK]
+
+
+
+
+
+
          
