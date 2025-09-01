@@ -1,0 +1,97 @@
+🔹 General Questions (Any IT Project)
+
+What problem does your project solve?
+
+Why did you choose this project topic?
+
+What technologies/frameworks did you use? Why?
+
+What challenges did you face during development?
+
+How did you test your project?
+
+How do you handle errors or exceptions?
+
+If you had more time, what improvements would you make?
+
+How is your project different from existing solutions?
+
+Which part of the project was most difficult for you?
+
+How did you divide the project work (if team project)?
+
+🔹 Technical Questions
+Frontend
+
+Why did you choose this frontend framework/library?
+
+How does your UI handle responsiveness?
+
+Can you explain the concept of state management in your project?
+
+Backend
+
+Which architecture did you use (Monolith, MVC, Microservices)?
+
+How is your API secured?
+
+How did you handle authentication and authorization?
+
+Which database did you use and why?
+
+Database
+
+Can you explain the schema of your project?
+
+Did you normalize your database? Why or why not?
+
+How do you handle relationships (One-to-One, One-to-Many, Many-to-Many)?
+
+What query was the most complex in your project?
+
+🔹 Deployment & Tools
+
+Where is your project deployed?
+
+How do you manage version control?
+
+Did you use any CI/CD pipeline?
+
+Which IDE/tools did you use?
+
+🔹 Security & Performance
+
+How do you prevent SQL injection / XSS / CSRF?
+
+What is the time complexity of your main algorithm?
+
+How did you optimize performance in your project?
+
+🔹 Project-Specific (Examples)
+
+👉 If project is E-commerce
+
+How does your cart system work?
+
+How did you integrate payment gateway?
+
+👉 If project is Library Management
+
+How do you track issued books?
+
+How do you handle overdue fines?
+
+👉 If project is Social Media App
+
+How do you manage posts, likes, and comments?
+
+How do you store multimedia files (images/videos)?
+
+⚡ Tip for Students:
+In cross-questioning, examiners usually try to check understanding, not only coding. So students should know:
+
+What & Why (choice of tech, tools, design).
+
+How (implementation details).
+
+Limitations (what is not covered).
